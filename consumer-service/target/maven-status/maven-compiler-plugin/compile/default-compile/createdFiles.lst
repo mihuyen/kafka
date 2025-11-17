@@ -1,0 +1,7 @@
+com\example\consumer\listener\KafkaMessageListener.class
+com\example\consumer\controller\MessageController.class
+com\example\consumer\ConsumerApplication.class
+com\example\consumer\model\MessageData.class
+com\example\consumer\config\KafkaConsumerConfig.class
+com\example\consumer\repository\MessageRepository.class
+com\example\consumer\service\KafkaConsumerService.class

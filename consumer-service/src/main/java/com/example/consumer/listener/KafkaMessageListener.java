@@ -27,7 +27,7 @@ public class KafkaMessageListener {
         containerFactory = "kafkaListenerContainerFactory"
     )
     public void listen(@Payload MessageData message,
-                      @Header(KafkaHeaders.RECEIVED_PARTITION_ID) int partition,
+                      @Header(KafkaHeaders.PARTITION) int partition,
                       @Header(KafkaHeaders.OFFSET) long offset,
                       @Header(KafkaHeaders.RECEIVED_TIMESTAMP) long timestamp) {
         try {
