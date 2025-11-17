@@ -1,0 +1,10 @@
+{
+  "java.import.maven.enabled": true,
+  "java.configuration.updateBuildConfiguration": "automatic",
+  "java.compile.nullAnalysis.mode": "automatic",
+  "java.project.sourcePaths": [
+    "producer-service/src/main/java",
+    "consumer-service/src/main/java"
+  ],
+  "maven.view": "hierarchical"
+}

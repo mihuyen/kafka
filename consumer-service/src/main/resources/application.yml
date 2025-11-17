@@ -1,0 +1,38 @@
+server:
+  port: 8082
+
+spring:
+  application:
+    name: kafka-consumer-service
+  kafka:
+    bootstrap-servers: localhost:9092,localhost:9093,localhost:9094
+    consumer:
+      group-id: message-consumer-group
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      properties:
+        spring.json.trusted.packages: "com.example.consumer.model,com.example.producer.model"
+        spring.json.type.mapping: "messageData:com.example.consumer.model.MessageData"
+        max.poll.records: 10
+        session.timeout.ms: 30000
+        heartbeat.interval.ms: 3000
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: password
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+  h2:
+    console:
+      enabled: true
+
+logging:
+  level:
+    org.apache.kafka: INFO
+    org.springframework.kafka: DEBUG
+    com.example.consumer: DEBUG
