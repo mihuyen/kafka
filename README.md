@@ -61,14 +61,8 @@ docker-compose ps
 ```
 
 **Output mong đợi:**
-```
-CONTAINER ID   IMAGE                              COMMAND                  STATUS
-xxx           confluentinc/cp-zookeeper:7.4.0    "sh -c '/etc/conflue..."  Up 2 minutes   zookeeper
-xxx           confluentinc/cp-kafka:7.4.0        "sh -c '/etc/conflue..."  Up 2 minutes   kafka1
-xxx           confluentinc/cp-kafka:7.4.0        "sh -c '/etc/conflue..."  Up 2 minutes   kafka2
-xxx           confluentinc/cp-kafka:7.4.0        "sh -c '/etc/conflue..."  Up 2 minutes   kafka3
-xxx           provectuslabs/kafka-ui:latest     "./container/do.sh.j..."  Up 2 minutes   kafka-ui
-```
+<img width="741" height="556" alt="image" src="https://github.com/user-attachments/assets/747a9cb6-1c62-475d-a265-d7607a670d1b" />
+
 
 ### Bước 2: Build Producer Service
 
