@@ -5,7 +5,6 @@ Dự án này triển khai một hệ thống Kafka cluster gồm 3 node với 2
 ## Mục Lục
 
 - [Giới Thiệu](#giới-thiệu)
-- [Cấu Trúc Dự Án](#cấu-trúc-dự-án)
 - [Yêu Cầu Hệ Thống](#yêu-cầu-hệ-thống)
 - [Cài Đặt và Chạy](#cài-đặt-và-chạy)
 - [Các Tính Năng](#các-tính-năng)
@@ -31,43 +30,6 @@ Dự án này triển khai một hệ thống Kafka cluster gồm 3 node với 2
 - Java 17
 - Docker & Docker Compose
 - H2 Database (cho Consumer)
-
-## Cấu Trúc Dự Án
-
-```
-kafka/
-├── docker-compose.yml                 # Docker Compose configuration
-├── README.md                          # Tài liệu này
-│
-├── producer-service/                  # Producer Spring Boot Application
-│   ├── pom.xml
-│   └── src/
-│       └── main/
-│           ├── java/com/example/producer/
-│           │   ├── ProducerApplication.java
-│           │   ├── controller/MessageController.java
-│           │   ├── service/KafkaProducerService.java
-│           │   └── model/MessageData.java
-│           └── resources/application.yml
-│
-├── consumer-service/                  # Consumer Spring Boot Application
-│   ├── pom.xml
-│   └── src/
-│       └── main/
-│           ├── java/com/example/consumer/
-│           │   ├── ConsumerApplication.java
-│           │   ├── controller/MessageController.java
-│           │   ├── listener/KafkaMessageListener.java
-│           │   ├── repository/MessageRepository.java
-│           │   └── model/MessageData.java
-│           └── resources/application.yml
-│
-└── scripts/                           # Scripts kiểm tra và test
-    ├── check-leader.sh               # Script kiểm tra leader (Linux/Mac)
-    ├── check-leader.bat              # Script kiểm tra leader (Windows)
-    ├── failover-test.sh              # Script test failover (Linux/Mac)
-    └── failover-test.bat             # Script test failover (Windows)
-```
 
 ## Yêu Cầu Hệ Thống
 
@@ -99,14 +61,8 @@ docker-compose ps
 ```
 
 **Output mong đợi:**
-```
-CONTAINER ID   IMAGE                              COMMAND                  STATUS
-xxx           confluentinc/cp-zookeeper:7.4.0    "sh -c '/etc/conflue..."  Up 2 minutes   zookeeper
-xxx           confluentinc/cp-kafka:7.4.0        "sh -c '/etc/conflue..."  Up 2 minutes   kafka1
-xxx           confluentinc/cp-kafka:7.4.0        "sh -c '/etc/conflue..."  Up 2 minutes   kafka2
-xxx           confluentinc/cp-kafka:7.4.0        "sh -c '/etc/conflue..."  Up 2 minutes   kafka3
-xxx           provectuslabs/kafka-ui:latest     "./container/do.sh.j..."  Up 2 minutes   kafka-ui
-```
+<img width="741" height="556" alt="image" src="https://github.com/user-attachments/assets/747a9cb6-1c62-475d-a265-d7607a670d1b" />
+
 
 ### Bước 2: Build Producer Service
 
