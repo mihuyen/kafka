@@ -26,6 +26,7 @@ docker-compose up -d
 ```
 
 Truy cập **Kafka UI** tại: [http://localhost:8080](http://localhost:8080)
+<img width="1792" height="796" alt="image" src="https://github.com/user-attachments/assets/db8a57de-dcf4-4b7a-8776-46e71cefc074" />
 
 ### 2. Chạy Producer Service
 Mở terminal mới:
@@ -63,8 +64,8 @@ curl -X POST http://localhost:8081/api/messages/send \
     "category": "TEST"
   }'
 ```
+<img width="1276" height="876" alt="image" src="https://github.com/user-attachments/assets/70bce3fc-eecd-4bc2-9a76-d6e67a3fb760" />
 
-Output mong đợi: `Message sent successfully with ID: 1`
 
 ### 2. Kiểm Tra Nhận Tin (Consumer)
 Kiểm tra số lượng tin nhắn đã nhận và lưu vào DB.
