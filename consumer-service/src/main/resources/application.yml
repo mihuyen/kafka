@@ -13,7 +13,7 @@ spring:
       value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
       properties:
         spring.json.trusted.packages: "com.example.consumer.model,com.example.producer.model"
-        spring.json.type.mapping: "messageData:com.example.consumer.model.MessageData"
+        spring.json.type.mapping: "com.example.producer.model.MessageData:com.example.consumer.model.MessageData"
         max.poll.records: 10
         session.timeout.ms: 30000
         heartbeat.interval.ms: 3000
