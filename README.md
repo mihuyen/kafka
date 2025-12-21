@@ -74,14 +74,8 @@ Kiểm tra số lượng tin nhắn đã nhận và lưu vào DB.
 curl http://localhost:8082/api/messages/count
 ```
 
-Output mong đợi:
-```json
-{
-  "totalMessages": 1,
-  "processedMessages": 1,
-  "unprocessedMessages": 0
-}
-```
+<img width="1252" height="788" alt="image" src="https://github.com/user-attachments/assets/9d87e2a6-7188-4dab-8a67-b787d7c7e5ee" />
+
 
 ---
 
@@ -96,13 +90,14 @@ Chạy lệnh sau để xem broker nào đang là Leader của `message-topic` (
 docker exec kafka1 kafka-topics --describe --topic message-topic --bootstrap-server kafka1:29092
 ```
 
-Kết quả ví dụ: `Leader: 2` (Nghĩa là `kafka2` là Leader).
+<img width="747" height="412" alt="image" src="https://github.com/user-attachments/assets/e5b39ce2-9ba9-46d2-a7fb-68d534c9b28b" />
+
 
 ### Bước 2: "Giết" Leader
-Dừng container của Leader broker (ví dụ là `kafka2`).
+Dừng container của Leader broker (ví dụ là `kafka3`).
 
 ```bash
-docker stop kafka2
+docker stop kafka3
 ```
 
 ### Bước 3: Gửi Tin Nhắn Khi Leader Chết
@@ -120,6 +115,8 @@ curl -X POST http://localhost:8081/api/messages/send \
 ```
 
 *Nếu gửi thành công, chứng tỏ Cluster đã tự phục hồi.*
+<img width="1223" height="823" alt="image" src="https://github.com/user-attachments/assets/d3ed2823-1788-4f56-bb6b-015f0b63f0ee" />
+
 
 ### Bước 4: Kiểm Tra Consumer
 Consumer vẫn phải nhận được tin nhắn này.
